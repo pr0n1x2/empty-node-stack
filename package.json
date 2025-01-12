@@ -4,9 +4,9 @@
   "description": "A template project for building server-side applications using TypeScript, integrated with Docker and development tools.",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && swc ./src -d dist",
-    "start": "node dist/src/index.js",
-    "start:docker": "pnpm build && node --inspect=0.0.0.0 dist/src/index.js",
+    "build": "rimraf dist && swc ./src -d dist --strip-leading-paths",
+    "start": "node dist/index.js",
+    "start:docker": "pnpm build && node --inspect=0.0.0.0 dist/index.js",
     "watch": "watchy --no-init-spawn --debounce 1 --watch src -- docker compose restart node"
   },
   "keywords": [],
